@@ -1,8 +1,8 @@
 from .base_command import BaseCommand
-import services
+from services import generate_correlation_heatmap
 
 
-class GenerateScatterMatrixCommand(BaseCommand):
+class GenerateCorrelationHeatmapCommand(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('--path', type=str, default='./plots/', help='path to save the matrix')
@@ -14,7 +14,7 @@ class GenerateScatterMatrixCommand(BaseCommand):
 
         args = list(filter(lambda x: x, [path, lines]))
 
-        services.generate_scatter_matrix(*args)
+        generate_correlation_heatmap(*args)
 
 
 

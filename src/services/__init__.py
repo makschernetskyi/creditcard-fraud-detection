@@ -1,1 +1,2 @@
 from .generate_scatter_matrix import generate_scatter_matrix
+from .generate_correlation_heatmap import generate_correlation_heatmap
