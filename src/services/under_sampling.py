@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def scale_time_amount(save_path, read_path="./dataset/creditcard_scaled_time_amount.csv"):
+def under_sampling(save_path, read_path="./dataset/creditcard_scaled_time_amount.csv"):
     df = pd.read_csv(read_path)
     df = df.sample(frac=1)  # shuffle rows
     df_fraud = df.loc[df['Class'] == 1]  # 492 rows

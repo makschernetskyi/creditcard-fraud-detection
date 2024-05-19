@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import RobustScaler
 
 
-# use robust scaler (less prone to outliners) for outline data - time + amount
+# use robust scaler (less prone to outliers) for outline data - time + amount
 
 
 def scale_time_amount(path):
