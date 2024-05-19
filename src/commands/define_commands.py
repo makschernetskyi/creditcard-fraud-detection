@@ -3,6 +3,7 @@ import pkgutil
 import importlib
 from .base_command import BaseCommand  # Make sure BaseCommand is accessible
 
+
 def define_commands():
     parser = argparse.ArgumentParser(description="CLI tool with automatic command discovery.")
     subparsers = parser.add_subparsers(dest='command', help='Subcommand to run')
