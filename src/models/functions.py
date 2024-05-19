@@ -7,7 +7,8 @@ from sklearn.model_selection import GridSearchCV
 def grid_search_best_params(model, parameters, X_train, y_train):
     kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=3)
     grid = GridSearchCV(model, param_grid=parameters, cv=kf,
-                        scoring='recall').fit(X_train, y_train)
+                        scoring='recall')
+    grid.fit(X_train, y_train)
     print(f"Best parameters for {repr(model)}:", grid.best_params_)
     print(f"Best score for {repr(model)}:", grid.best_score_)
     return grid.best_params_
