@@ -31,10 +31,12 @@ logistic_regression_parameters = {
 }
 
 random_forest_parameters = {
-    'n_estimators': [50, 100, 200],  # Number of trees in the forest
+    'n_estimators': [50, 100, 200, 500],  # Number of trees in the forest
     'max_depth': [None, 10, 20, 30],  # Maximum depth of the trees
     'min_samples_split': [2, 5, 10],  # Minimum number of samples required to split an internal node
-    'min_samples_leaf': [1, 2, 4]  # Minimum number of samples required to be at a leaf node
+    'min_samples_leaf': [1, 2, 4],  # Minimum number of samples required to be at a leaf node
+    'max_leaf_nodes': [10, 16, 20, 30],  # Maximum number of leaf nodes, fixed at 16
+    'n_jobs': [-1]  # Number of jobs to run in parallel, -1 means using all processors
 }
 
 k_nearest_parameters = {
@@ -47,7 +49,25 @@ decision_tree_classifier_parameters = {
     "criterion": ["gini", "entropy"],  # Criteria for quality of split
     "max_depth": np.arange(2, 4, 1),  # Maximum depth of the tree
     "min_samples_leaf": np.arange(5, 7, 1)  # Minimum number of samples required to be at a leaf node
+    "max_leaf_nodes": [10, 20, 30, None],  # Different values for maximum number of leaf nodes
+    "n_estimators": [50, 100, 200, 500],  # Number of trees in the forest
+    "max_samples": [0.5, 0.75, 1.0],  # Maximum number of samples to draw from X to train each base estimator
+    "bootstrap": [True, False],  # Whether bootstrap samples are used when building trees
+    "n_jobs": [-1]  # Different values for number of jobs to run in parallel
 }
+
+decision_tree_classifier_parameters = {
+    "criterion": ["gini", "entropy"],  # Criteria for quality of split
+    "max_depth": np.arange(2, 4, 1),  # Maximum depth of the tree
+    "min_samples_leaf": np.arange(5, 7, 1),  # Minimum number of samples required to be at a leaf node
+
+
+    "bootstrap": [True, False],  # Whether bootstrap samples are used when building trees
+    "n_jobs": [-1, 1, 2, 4]  # Different values for number of jobs to run in parallel
+}
+
+max_leaf_nodes =16) ,
+n_estimators =500 , max_samples =1.0 , bootstrap =True , n_jobs = -1)
 
 
 gaussian_mixture_parameters = {
