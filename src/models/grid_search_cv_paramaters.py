@@ -2,6 +2,9 @@ import numpy as np
 
 # PARAMETERS FOR GRID SEARCH
 
+# PARAMETERS FOR GRID SEARCH
+
+
 svc_parameters = {
     'C': [0.2, 0.4, 0.6, 0.8, 1.],  # Lower values-stronger regularization
     'kernel': ['rbf', 'poly', 'sigmoid', 'linear']  # Kernel type
@@ -13,10 +16,12 @@ logistic_regression_parameters = {
 }
 
 random_forest_parameters = {
-    'n_estimators': [50, 100, 200],  # Number of trees in the forest
+    'n_estimators': [50, 100, 200, 500],  # Number of trees in the forest
     'max_depth': [None, 10, 20, 30],  # Maximum depth of the trees
     'min_samples_split': [2, 5, 10],  # Minimum number of samples required to split an internal node
-    'min_samples_leaf': [1, 2, 4]  # Minimum number of samples required to be at a leaf node
+    'min_samples_leaf': [1, 2, 4],  # Minimum number of samples required to be at a leaf node
+    'max_leaf_nodes': [10, 16, 20, 30],  # Maximum number of leaf nodes, fixed at 16
+    'n_jobs': [-1]  # Number of jobs to run in parallel, -1 means using all processors
 }
 
 k_nearest_parameters = {
@@ -28,16 +33,13 @@ k_nearest_parameters = {
 decision_tree_classifier_parameters = {
     "criterion": ["gini", "entropy"],  # Criteria for quality of split
     "max_depth": np.arange(2, 4, 1),  # Maximum depth of the tree
-    "min_samples_leaf": np.arange(5, 7, 1)  # Minimum number of samples required to be at a leaf node
+    "min_samples_leaf": np.arange(5, 7, 1),  # Minimum number of samples required to be at a leaf node
+    "max_leaf_nodes": [10, 20, 30, None],  # Different values for maximum number of leaf nodes
+    "n_estimators": [50, 100, 200, 500],  # Number of trees in the forest
+    "max_samples": [0.5, 0.75, 1.0],  # Maximum number of samples to draw from X to train each base estimator
+    "bootstrap": [True, False],  # Whether bootstrap samples are used when building trees
+    "n_jobs": [-1]  # Different values for number of jobs to run in parallel
 }
-
-
-gaussian_mixture_parameters = {
-    'n_components': [2, 3, 4, 5],           # Number of mixture components
-    'covariance_type': ['full', 'tied', 'diag', 'spherical'],  # Type of covariance parameters to use
-    'max_iter': [50, 100, 200]              # Maximum number of EM iterations to perform
-}
-
 
 isolation_forest_parameters = {
     'n_estimators': [50, 100, 200],         # Number of base estimators in the ensemble
