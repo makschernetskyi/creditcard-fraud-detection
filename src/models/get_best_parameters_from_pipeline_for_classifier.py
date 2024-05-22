@@ -18,7 +18,7 @@ def get_best_parameters_from_pipeline_for_classifier(classifier, df, parameters)
 
     random_forest_pipeline = Pipeline([
         ('scaler', StandardScaler()),
-        ('classifier', classifier)
+        ('classifier', classifier())
     ])
 
     params = add_prefix_to_dict_keys(parameters, "classifier__")
