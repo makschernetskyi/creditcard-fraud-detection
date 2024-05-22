@@ -1,0 +1,29 @@
+******************RandomForestClassifier*******************
+
+
+
+******************DecisionTreeClassifier*******************
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', DecisionTreeClassifier())]): {'classifier__criterion': 'gini', 'classifier__max_depth': 3, 'classifier__max_leaf_nodes': 5, 'classifier__min_samples_leaf': 10}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', DecisionTreeClassifier())]): 0.9247008547008547
+{'classifier__criterion': 'gini', 'classifier__max_depth': 3, 'classifier__max_leaf_nodes': 5, 'classifier__min_samples_leaf': 10}
+
+*******************SVC*************************************
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC())]): {'classifier__C': 0.5, 'classifier__gamma': 10, 'classifier__kernel': 'rbf'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC())]): 0.9705555555555556
+{'classifier__C': 0.5, 'classifier__gamma': 10, 'classifier__kernel': 'rbf'}
+
+*******************LogisticRegression**********************
+
+
+
+*******************KNeighborsClassifier********************
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', KNeighborsClassifier())]): {'classifier__n_neighbors': 1, 'classifier__p': 1, 'classifier__weights': 'uniform'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', KNeighborsClassifier())]): 0.9101709401709402
+{'classifier__n_neighbors': 1, 'classifier__p': 1, 'classifier__weights': 'uniform'}
