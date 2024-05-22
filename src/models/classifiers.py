@@ -48,7 +48,7 @@ k_nearest_parameters = {
 decision_tree_classifier_parameters = {
     "criterion": ["gini", "entropy"],  # Criteria for quality of split
     "max_depth": np.arange(2, 4, 1),  # Maximum depth of the tree
-    "min_samples_leaf": np.arange(5, 7, 1)  # Minimum number of samples required to be at a leaf node
+    "min_samples_leaf": np.arange(5, 7, 1), # Minimum number of samples required to be at a leaf node
     "max_leaf_nodes": [10, 20, 30, None],  # Different values for maximum number of leaf nodes
     "n_estimators": [50, 100, 200, 500],  # Number of trees in the forest
     "max_samples": [0.5, 0.75, 1.0],  # Maximum number of samples to draw from X to train each base estimator
