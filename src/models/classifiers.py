@@ -56,27 +56,6 @@ decision_tree_classifier_parameters = {
     "n_jobs": [-1]  # Different values for number of jobs to run in parallel
 }
 
-decision_tree_classifier_parameters = {
-    "criterion": ["gini", "entropy"],  # Criteria for quality of split
-    "max_depth": np.arange(2, 4, 1),  # Maximum depth of the tree
-    "min_samples_leaf": np.arange(5, 7, 1),  # Minimum number of samples required to be at a leaf node
-
-
-    "bootstrap": [True, False],  # Whether bootstrap samples are used when building trees
-    "n_jobs": [-1, 1, 2, 4]  # Different values for number of jobs to run in parallel
-}
-
-max_leaf_nodes =16) ,
-n_estimators =500 , max_samples =1.0 , bootstrap =True , n_jobs = -1)
-
-
-gaussian_mixture_parameters = {
-    'n_components': [2, 3, 4, 5],           # Number of mixture components
-    'covariance_type': ['full', 'tied', 'diag', 'spherical'],  # Type of covariance parameters to use
-    'max_iter': [50, 100, 200]              # Maximum number of EM iterations to perform
-}
-
-
 isolation_forest_parameters = {
     'n_estimators': [50, 100, 200],         # Number of base estimators in the ensemble
     'max_samples': ['auto', 100, 200],      # Number of samples to draw from X to train each base estimator
