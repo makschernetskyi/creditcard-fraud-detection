@@ -1,6 +1,13 @@
 ******************RandomForestClassifier*******************
 
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', RandomForestClassifier())]): {'classifier__max_depth': 30, 'classifier__min_samples_leaf': 1, 'classifier__min_samples_split': 5, 'classifier__n_estimators': 200}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', RandomForestClassifier())]): 0.9052991452991453
+{'classifier__max_depth': 30, 'classifier__min_samples_leaf': 1, 'classifier__min_samples_split': 5, 'classifier__n_estimators': 200}
 
+
+Cross Validation Score :  94.20%
 
 ******************DecisionTreeClassifier*******************
 
@@ -18,7 +25,11 @@ Best score for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC(
 
 *******************LogisticRegression**********************
 
-
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', LogisticRegression())]): {'classifierC': 545.5594781168514, 'classifierpenalty': 'l2'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', LogisticRegression())]): 0.9075427350427352
+{'classifierC': 545.5594781168514, 'classifierpenalty': 'l2'}
 
 *******************KNeighborsClassifier********************
 

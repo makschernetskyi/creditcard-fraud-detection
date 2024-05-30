@@ -9,7 +9,7 @@ svc_parameters = {
 }
 
 logistic_regression_parameters = {
-    'penalty': ['l1', 'l2'],  # Norm used in the penalization
+    'penalty': ['l2'],  # Norm used in the penalization
     'C': np.logspace(-4, 4, 20)  # Inverse of regularization strength
 }
 
@@ -34,6 +34,15 @@ decision_tree_classifier_parameters = {
     "min_samples_leaf": [1, 2, 3, 5, 10],  # Minimum number of samples required to be at a leaf node
     "max_leaf_nodes": [2, 5, 10, 20, 100, None],  # Different values for maximum number of leaf nodes
 }
+
+gaussian_mixture_parameters = {
+    'n_components': [1, 3, 5, 7],   # Number of mixture components
+    'covariance_type': ['full', 'tied', 'diag', 'spherical'],  # Type of covariance parameters to use
+    'tol': [1e-3, 1e-4, 1e-5],                           # Convergence threshold
+    'reg_covar': [1e-6, 1e-5, 1e-4],                     # Regularization on covariance to avoid singular matrices
+    'max_iter': [100, 200, 300, 400]                # Maximum number of iterations
+}
+
 
 isolation_forest_parameters = {
     'n_estimators': [50, 100, 200],         # Number of base estimators in the ensemble

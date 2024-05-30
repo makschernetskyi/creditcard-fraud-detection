@@ -25,14 +25,17 @@ def scores(model, best_parameters, df):
     y = preprocessed_df['Class']
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-    model(best_parameters).fit(X_train, y_train)
-    prediction = model.predict(X_test)
+    classifier = model(**best_parameters)
+    classifier.fit(X_train, y_train)
+    prediction = classifier.predict(X_test)
+    y_scores = classifier.predict_proba(X_test)[:, 1]
     kf = RepeatedStratifiedKFold(n_splits=10, n_repeats=3)  #
     print("Cross Validation Score : ",
-          '{0:.2%}'.format(cross_val_score(model, X_train, y_train, cv=kf, scoring='roc_auc').mean()))
-    fpr, tpr, thresholds = roc_curve(y_test, prediction)
+          '{0:.2%}'.format(cross_val_score(classifier, X_train, y_train, cv=kf, scoring='roc_auc').mean()))
+    fpr, tpr, thresholds = roc_curve(y_test, y_scores)
     roc_auc = auc(fpr, tpr)
     display = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=repr(model))
     display.plot()
+    plt.savefig('./plots/' + f'ROC_AUC_{model.__class__.__name__}.png')
     plt.show()
     print(classification_report(y_test, prediction))
