@@ -1,0 +1,23 @@
+*******************KNeighborsClassifier********************
+
+###GRID SEARCH
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', KNeighborsClassifier())]): {'classifier__n_neighbors': 1, 'classifier__p': 1, 'classifier__weights': 'uniform'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', KNeighborsClassifier())]): 0.9101709401709402
+{'classifier__n_neighbors': 1, 'classifier__p': 1, 'classifier__weights': 'uniform'}
+
+
+
+#####SCORES
+
+Cross Validation Score :  92.13%
+              precision    recall  f1-score   support
+
+           0       0.93      0.94      0.93        99
+           1       0.94      0.93      0.93        98
+
+    accuracy                           0.93       197
+   macro avg       0.93      0.93      0.93       197
+weighted avg       0.93      0.93      0.93       197

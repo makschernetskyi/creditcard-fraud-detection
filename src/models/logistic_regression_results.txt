@@ -1,0 +1,23 @@
+*******************LogisticRegression**********************
+
+###GRID SEARCH
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', LogisticRegression())]): {'classifierC': 545.5594781168514, 'classifierpenalty': 'l2'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()),
+                ('classifier', LogisticRegression())]): 0.9075427350427352
+{'classifierC': 545.5594781168514, 'classifierpenalty': 'l2'}
+
+
+
+###SCORES
+
+Cross Validation Score :  98.51%
+              precision    recall  f1-score   support
+
+           0       0.90      1.00      0.95        99
+           1       1.00      0.89      0.94        98
+
+    accuracy                           0.94       197
+   macro avg       0.95      0.94      0.94       197
+weighted avg       0.95      0.94      0.94       197

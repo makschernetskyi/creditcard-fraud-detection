@@ -9,5 +9,3 @@ file_csv = "./dataset/creditcard.csv"
 df = pd.read_csv(file_csv)
 
 best_params = get_best_parameters_from_pipeline_for_classifier(KNeighborsClassifier,  df, k_neighbors_parameters)
-
-#scores = scores(KNeighborsClassifier, best_params, df) ?????????

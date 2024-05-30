@@ -1,0 +1,21 @@
+*******************SVC*************************************
+
+###GRID SEARCH
+
+Best parameters for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC())]): {'classifier__C': 0.5, 'classifier__gamma': 10, 'classifier__kernel': 'rbf'}
+Best score for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC())]): 0.9705555555555556
+{'classifier__C': 0.5, 'classifier__gamma': 10, 'classifier__kernel': 'rbf'}
+
+
+
+###SCORES
+
+Cross Validation Score :  82.42%
+              precision    recall  f1-score   support
+
+           0       0.52      1.00      0.68        99
+           1       1.00      0.06      0.12        98
+
+    accuracy                           0.53       197
+   macro avg       0.76      0.53      0.40       197
+weighted avg       0.76      0.53      0.40       197

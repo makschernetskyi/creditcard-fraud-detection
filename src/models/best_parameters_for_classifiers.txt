@@ -11,12 +11,30 @@ Cross Validation Score :  94.20%
 
 ******************DecisionTreeClassifier*******************
 
+
+####GRID SEARCH
+
 Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
                 ('classifier', DecisionTreeClassifier())]): {'classifier__criterion': 'gini', 'classifier__max_depth': 3, 'classifier__max_leaf_nodes': 5, 'classifier__min_samples_leaf': 10}
 Best score for Pipeline(steps=[('scaler', StandardScaler()),
                 ('classifier', DecisionTreeClassifier())]): 0.9247008547008547
 {'classifier__criterion': 'gini', 'classifier__max_depth': 3, 'classifier__max_leaf_nodes': 5, 'classifier__min_samples_leaf': 10}
 
+
+#####PLOT_ROC_AND_SCORES
+
+Cross Validation Score :  95.31%
+              precision    recall  f1-score   support
+
+           0       0.89      0.98      0.93        99
+           1       0.98      0.88      0.92        98
+
+    accuracy                           0.93       197
+   macro avg       0.93      0.93      0.93       197
+weighted avg       0.93      0.93      0.93       197
+
+
+Process finished with exit code 0
 *******************SVC*************************************
 
 Best parameters for Pipeline(steps=[('scaler', StandardScaler()), ('classifier', SVC())]): {'classifier__C': 0.5, 'classifier__gamma': 10, 'classifier__kernel': 'rbf'}
@@ -38,3 +56,5 @@ Best parameters for Pipeline(steps=[('scaler', StandardScaler()),
 Best score for Pipeline(steps=[('scaler', StandardScaler()),
                 ('classifier', KNeighborsClassifier())]): 0.9101709401709402
 {'classifier__n_neighbors': 1, 'classifier__p': 1, 'classifier__weights': 'uniform'}
+
+Cross Validation Score :  93.22%

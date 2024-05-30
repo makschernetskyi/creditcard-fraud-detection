@@ -34,7 +34,7 @@ def scores(model, best_parameters, df):
           '{0:.2%}'.format(cross_val_score(classifier, X_train, y_train, cv=kf, scoring='roc_auc').mean()))
     fpr, tpr, thresholds = roc_curve(y_test, y_scores)
     roc_auc = auc(fpr, tpr)
-    display = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=repr(model))
+    display = RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc, estimator_name=repr(classifier))
     display.plot()
     plt.savefig('./plots/' + f'ROC_AUC_{model.__class__.__name__}.png')
     plt.show()

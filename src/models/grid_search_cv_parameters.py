@@ -19,7 +19,6 @@ random_forest_parameters = {
     'min_samples_split': [2, 5, 10],  # Minimum number of samples required to split an internal node
     'min_samples_leaf': [1, 2, 4],  # Minimum number of samples required to be at a leaf node
     'max_leaf_nodes': [10, 16, 20, 30],  # Maximum number of leaf nodes, fixed at 16
-    'n_jobs': [-1]  # Number of jobs to run in parallel, -1 means using all processors
 }
 
 k_neighbors_parameters = {
